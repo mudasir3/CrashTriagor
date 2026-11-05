@@ -1,0 +1,143 @@
+# Signature rules: known Android crash patterns.
+# A match becomes a HINT for the model, never the final answer.
+# Every condition given under `when` must match (regex, case-sensitive):
+#   exception: any exception type in the Caused-by chain
+#   message:   any exception message in the chain
+#   frames:    any frame (class.method) in the crash
+#   kind:      jvm_exception | anr | native
+#   text:      anywhere in the raw crash block
+
+- id: fragment_state_loss
+  category: lifecycle_state
+  when: {message: "after onSaveInstanceState"}
+  hint: Fragment transaction or dialog shown after state was saved. Trigger UI from a lifecycle-aware collector (repeatOnLifecycle STARTED) or check isStateSaved.
+
+- id: view_binding_after_destroy
+  category: lifecycle_state
+  when: {exception: "NullPointerException", frames: "Fragment\\.(getBinding|get_binding)"}
+  hint: Binding accessed after onDestroyView, usually from lifecycleScope instead of viewLifecycleOwner.lifecycleScope.
+
+- id: activity_result_late_register
+  category: lifecycle_state
+  when: {message: "attempting to register while current state is"}
+  hint: registerForActivityResult called after STARTED. Register in a field initializer or onCreate.
+
+- id: navigation_destination_missing
+  category: lifecycle_state
+  when: {message: "cannot be found from the current destination"}
+  hint: navigate() called twice (double tap) or from a stale destination. Check currentDestination or debounce.
+
+- id: lateinit_uninitialized
+  category: null_safety
+  when: {exception: "UninitializedPropertyAccessException"}
+  hint: lateinit read before assignment. Find the code path that runs before initialisation.
+
+- id: platform_type_npe
+  category: null_safety
+  when: {exception: "NullPointerException", message: "must not be null"}
+  hint: A Java API returned null into a non-null Kotlin type. Use a nullable type or a default.
+
+- id: network_on_main
+  category: main_thread_violation
+  when: {exception: "NetworkOnMainThreadException"}
+  hint: Blocking network call on the main thread. Use suspend APIs or withContext(Dispatchers.IO).
+
+- id: strictmode_violation
+  category: main_thread_violation
+  when: {text: "StrictMode policy violation"}
+  hint: StrictMode violation, not a crash. Move the I/O off the main thread; impact is usually debug-only.
+
+- id: concurrent_modification
+  category: concurrency
+  when: {exception: "ConcurrentModificationException"}
+  hint: Collection mutated while iterated, often from another thread. Use a snapshot copy or a thread-safe structure.
+
+- id: flow_invariant
+  category: coroutine
+  when: {message: "Flow invariant is violated"}
+  hint: Emission from a different coroutine/context inside flow { }. Use flowOn or channelFlow.
+
+- id: coroutine_uncaught
+  category: coroutine
+  when: {text: "DiagnosticCoroutineContextException"}
+  hint: Exception escaped a launch{} with no handler. Catch it inside the coroutine and surface an error state.
+
+- id: oom
+  category: memory
+  when: {exception: "OutOfMemoryError"}
+  hint: Heap exhausted. Large allocation = decode/sizing problem; tiny allocation = leak, needs a heap dump.
+
+- id: transaction_too_large
+  category: parcel_binder
+  when: {exception: "TransactionTooLargeException"}
+  hint: Binder transaction over ~1MB, usually a large savedInstanceState or Intent extras. Keep only ids in bundles.
+
+- id: parcelable_creator
+  category: parcel_binder
+  when: {exception: "BadParcelableException"}
+  hint: Parcelable missing CREATOR or class stripped. Check @Parcelize setup and keep rules.
+
+- id: bad_token
+  category: window_ui
+  when: {exception: "BadTokenException"}
+  hint: Window added after the Activity finished. Check lifecycle state before show(); prefer DialogFragment.
+
+- id: view_not_attached
+  category: window_ui
+  when: {message: "not attached to window manager"}
+  hint: Dialog dismissed after its Activity was destroyed. Tie dialog lifetime to the lifecycle.
+
+- id: lazy_duplicate_key
+  category: compose_runtime
+  when: {message: "was already used"}
+  hint: Duplicate key in LazyColumn/LazyRow. Keys must be unique and stable.
+
+- id: snapshot_state_thread
+  category: compose_runtime
+  when: {message: "Reading a state that was created after the snapshot"}
+  hint: Compose state written from a background thread. Write state on Main or use StateFlow + collectAsState.
+
+- id: missing_runtime_permission
+  category: permission_security
+  when: {exception: "SecurityException", message: "permission"}
+  hint: Runtime permission not granted. Check and request it before the call (Android 12+ split many permissions).
+
+- id: fgs_not_allowed
+  category: permission_security
+  when: {exception: "ForegroundServiceStartNotAllowedException"}
+  hint: Foreground service started from background on Android 12+. Use WorkManager expedited work.
+
+- id: room_missing_migration
+  category: database
+  when: {message: "migration from \\d+ to \\d+ was required"}
+  hint: Room schema bumped without a Migration. Add the Migration (or a tested destructive fallback).
+
+- id: resource_not_found
+  category: resources
+  when: {exception: "Resources\\$NotFoundException"}
+  hint: Resource missing for this configuration (qualifier-only folder, or stripped by shrinkResources).
+
+- id: reflection_class_stripped
+  category: r8_build_config
+  when: {exception: "ClassNotFoundException|NoSuchMethodException", text: "Class\\.forName|newInstance|DexPathList"}
+  hint: Class loaded by reflection was removed or renamed by R8. Add a -keep rule.
+
+- id: anr_lock_contention
+  category: anr_blocking
+  when: {kind: anr, text: "waiting to lock"}
+  hint: Main thread blocked on a lock. Look at what the holder thread does while holding it.
+
+- id: anr_broadcast
+  category: anr_blocking
+  when: {kind: anr, text: "Broadcast of Intent"}
+  hint: onReceive ran too long on the main thread. Use goAsync() for short work or hand off to WorkManager.
+
+- id: anr_binder_main
+  category: anr_blocking
+  when: {kind: anr, text: "BinderProxy\\.transact"}
+  hint: Main thread blocked in a binder/IPC call (ContentResolver, system service). Move it off Main.
+
+- id: native_crash
+  category: native
+  when: {kind: native}
+  hint: Native crash. Needs symbolicated backtrace (ndk-stack with unstripped .so) for a real root cause.

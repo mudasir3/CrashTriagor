@@ -1,0 +1,12 @@
+java.lang.IllegalStateException: Flow invariant is violated:
+		Emission from another coroutine is detected.
+		Child of StandaloneCoroutine{Active}@3b7c, expected child of ProducerCoroutine{Active}@91fa.
+		FlowCollector is not thread-safe and concurrent emissions are prohibited.
+		To mitigate this restriction please use 'channelFlow' builder instead of 'flow'
+	at kotlinx.coroutines.flow.internal.SafeCollector_commonKt.checkContext(SafeCollector.common.kt:85)
+	at kotlinx.coroutines.flow.internal.SafeCollector.checkContext(SafeCollector.kt:106)
+	at kotlinx.coroutines.flow.internal.SafeCollector.emit(SafeCollector.kt:83)
+	at com.example.triagedemo.search.SearchRepository$search$1$1.invokeSuspend(SearchRepository.kt:39)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)

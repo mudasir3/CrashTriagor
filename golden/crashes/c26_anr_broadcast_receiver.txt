@@ -1,0 +1,22 @@
+----- pid 12345 at 2026-11-02 14:03:11.482+0500 -----
+Cmd line: com.example.triagedemo
+Build fingerprint: 'google/panther/panther:14/AP1A.240505.005/11677807:user/release-keys'
+ABI: 'arm64'
+
+Subject: Broadcast of Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x4200010 cmp=com.example.triagedemo/.sync.NetworkReceiver }
+Reason: Broadcast of Intent { act=android.net.conn.CONNECTIVITY_CHANGE flg=0x4200010 cmp=com.example.triagedemo/.sync.NetworkReceiver }
+
+"main" prio=5 tid=1 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x72f3a2b8 self=0xb400007a1c2c4c00
+  | sysTid=12345 nice=0 cgrp=default sched=0/0 handle=0x7b4e8a14f8
+  native: #00 pc 000a2e58  /apex/com.android.runtime/lib64/bionic/libc.so (recvfrom+8)
+  at libcore.io.Linux.recvfromBytes(Native Method)
+  at libcore.io.IoBridge.recvfrom(IoBridge.java:619)
+  at java.net.SocketInputStream.read(SocketInputStream.java:128)
+  at okio.InputStreamSource.read(JvmOkio.kt:94)
+  at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+  at com.example.triagedemo.sync.OfflineQueue.flush(OfflineQueue.kt:48)
+  at com.example.triagedemo.sync.NetworkReceiver.onReceive(NetworkReceiver.kt:21)
+  at android.app.ActivityThread.handleReceiver(ActivityThread.java:4590)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8177)

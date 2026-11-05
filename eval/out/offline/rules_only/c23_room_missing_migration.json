@@ -1,0 +1,46 @@
+{
+  "id": "c23_room_missing_migration",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.IllegalStateException",
+    "root_cause_category": "database",
+    "root_cause": "Room schema bumped without a Migration. Add the Migration (or a tested destructive fallback).",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.data.OrdersDao_Impl",
+      "method": "getAll",
+      "file": "OrdersDao_Impl.java",
+      "line": 96,
+      "is_app_code": true
+    },
+    "severity": "P0",
+    "severity_reason": "Inferred from the trace alone: startup or data path.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Room schema bumped without a Migration. Add the Migration (or a tested destructive fallback).",
+      "steps": [
+        "Room schema bumped without a Migration. Add the Migration (or a tested destructive fallback)."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "room_missing_migration"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "room_missing_migration"
+  ],
+  "notes": []
+}

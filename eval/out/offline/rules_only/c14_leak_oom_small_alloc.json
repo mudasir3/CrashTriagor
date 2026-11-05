@@ -1,0 +1,48 @@
+{
+  "id": "c14_leak_oom_small_alloc",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.OutOfMemoryError",
+    "root_cause_category": "memory",
+    "root_cause": "Heap exhausted. Large allocation = decode/sizing problem; tiny allocation = leak, needs a heap dump.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.analytics.EventBuffer",
+      "method": "record",
+      "file": "EventBuffer.kt",
+      "line": 31,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "medium",
+    "suggested_fix": {
+      "summary": "Heap exhausted. Large allocation = decode/sizing problem; tiny allocation = leak, needs a heap dump.",
+      "steps": [
+        "Heap exhausted. Large allocation = decode/sizing problem; tiny allocation = leak, needs a heap dump."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [
+      "heap dump (LeakCanary or Android Studio profiler)"
+    ],
+    "rule_hits": [
+      "oom"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "oom"
+  ],
+  "notes": []
+}

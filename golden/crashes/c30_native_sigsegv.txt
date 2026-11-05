@@ -1,0 +1,20 @@
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'samsung/a52qnsxx/a52q:13/TP1A.220624.014/A525FXXS6DWA1:user/release-keys'
+Revision: '5'
+ABI: 'arm64'
+Timestamp: 2026-11-02 14:03:11.482+0500
+Process uptime: 214s
+Cmdline: com.example.triagedemo
+pid: 12345, tid: 12398, name: FilterWorker  >>> com.example.triagedemo <<<
+uid: 10231
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000010
+Cause: null pointer dereference
+    x0  0000000000000000  x1  0000007a1c2c4c00  x2  0000000000000400  x3  0000000000000001
+    sp  0000007b3ad9e5f0  lr  0000007a40812b38  pc  0000007a40812a4c
+
+backtrace:
+      #00 pc 0000000000012a4c  /data/app/~~Qx1/com.example.triagedemo-2/lib/arm64/libimagefilter.so (BuildId: 6f3a9e2c1b7d4f8e)
+      #01 pc 0000000000012b34  /data/app/~~Qx1/com.example.triagedemo-2/lib/arm64/libimagefilter.so (BuildId: 6f3a9e2c1b7d4f8e)
+      #02 pc 0000000000013f90  /data/app/~~Qx1/com.example.triagedemo-2/lib/arm64/libimagefilter.so (Java_com_example_triagedemo_filters_NativeFilter_apply+64) (BuildId: 6f3a9e2c1b7d4f8e)
+      #03 pc 0000000000355830  /apex/com.android.art/lib64/libart.so (art_quick_generic_jni_trampoline+144)
+      #04 pc 000000000033ec74  /apex/com.android.art/lib64/libart.so (art_quick_invoke_stub+612)

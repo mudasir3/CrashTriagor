@@ -1,0 +1,10 @@
+java.lang.SecurityException: Need android.permission.BLUETOOTH_CONNECT permission for AttributionSource { uid = 10231, packageName = com.example.triagedemo, attributionTag = null, token = android.os.BinderProxy@22c1a0, next = null }: AdapterService getBondedDevices
+	at android.os.Parcel.createExceptionOrNull(Parcel.java:3069)
+	at android.os.Parcel.readException(Parcel.java:3037)
+	at android.bluetooth.IBluetooth$Stub$Proxy.getBondedDevices(IBluetooth.java:3110)
+	at android.bluetooth.BluetoothAdapter.getBondedDevices(BluetoothAdapter.java:2765)
+	at com.example.triagedemo.devices.DeviceScanner.listPaired(DeviceScanner.kt:40)
+	at com.example.triagedemo.devices.DevicesViewModel$load$1.invokeSuspend(DevicesViewModel.kt:28)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

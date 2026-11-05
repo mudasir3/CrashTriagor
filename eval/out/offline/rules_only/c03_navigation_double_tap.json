@@ -1,0 +1,46 @@
+{
+  "id": "c03_navigation_double_tap",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.IllegalArgumentException",
+    "root_cause_category": "lifecycle_state",
+    "root_cause": "navigate() called twice (double tap) or from a stale destination. Check currentDestination or debounce.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.list.ProductListFragment$onItemClick$1",
+      "method": "invoke",
+      "file": "ProductListFragment.kt",
+      "line": 97,
+      "is_app_code": true
+    },
+    "severity": "P1",
+    "severity_reason": "Impact data: 3100 users / 5400 crashes.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "navigate() called twice (double tap) or from a stale destination. Check currentDestination or debounce.",
+      "steps": [
+        "navigate() called twice (double tap) or from a stale destination. Check currentDestination or debounce."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "navigation_destination_missing"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "navigation_destination_missing"
+  ],
+  "notes": []
+}

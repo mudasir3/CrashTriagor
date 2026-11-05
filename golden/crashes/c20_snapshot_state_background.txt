@@ -1,0 +1,9 @@
+java.lang.IllegalStateException: Reading a state that was created after the snapshot was taken or in a snapshot that has not yet been applied
+	at androidx.compose.runtime.snapshots.SnapshotKt.readError(Snapshot.kt:2051)
+	at androidx.compose.runtime.snapshots.SnapshotKt.readable(Snapshot.kt:2047)
+	at androidx.compose.runtime.SnapshotMutableStateImpl.getValue(SnapshotState.kt:142)
+	at com.example.triagedemo.timer.TimerViewModel.getElapsed(TimerViewModel.kt:21)
+	at com.example.triagedemo.timer.TimerViewModel$start$1.invokeSuspend(TimerViewModel.kt:35)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)

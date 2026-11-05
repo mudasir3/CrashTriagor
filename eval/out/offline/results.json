@@ -1,0 +1,69 @@
+{
+  "split": "all",
+  "summary": {
+    "rules_only": {
+      "n": 30,
+      "category_accuracy": "100% (30/30)",
+      "frame_accuracy": "100% (25/25)",
+      "null_culprit_when_expected": "80% (4/5)",
+      "severity_exact": "60% (18/30)",
+      "severity_within_one": "100% (30/30)",
+      "schema_valid_first_try": "n/a (no model)",
+      "invalid_after_repair": 0,
+      "grounding_flags": 0,
+      "latency_p50_s": "n/a",
+      "latency_p95_s": "n/a",
+      "avg_tokens_in_out": "n/a",
+      "cost_per_crash_usd": "0 (no model)",
+      "fix_usefulness_0_2": "not graded yet"
+    }
+  },
+  "per_category": {
+    "anr_blocking": {
+      "rules_only": "3/3"
+    },
+    "compose_runtime": {
+      "rules_only": "2/2"
+    },
+    "concurrency": {
+      "rules_only": "1/1"
+    },
+    "coroutine": {
+      "rules_only": "2/2"
+    },
+    "database": {
+      "rules_only": "1/1"
+    },
+    "lifecycle_state": {
+      "rules_only": "4/4"
+    },
+    "main_thread_violation": {
+      "rules_only": "2/2"
+    },
+    "memory": {
+      "rules_only": "2/2"
+    },
+    "native": {
+      "rules_only": "1/1"
+    },
+    "null_safety": {
+      "rules_only": "4/4"
+    },
+    "parcel_binder": {
+      "rules_only": "2/2"
+    },
+    "permission_security": {
+      "rules_only": "2/2"
+    },
+    "r8_build_config": {
+      "rules_only": "1/1"
+    },
+    "resources": {
+      "rules_only": "1/1"
+    },
+    "window_ui": {
+      "rules_only": "2/2"
+    }
+  },
+  "failures": {}
+}

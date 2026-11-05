@@ -1,0 +1,37 @@
+----- pid 12345 at 2026-11-02 14:03:11.482+0500 -----
+Cmd line: com.example.triagedemo
+Build fingerprint: 'google/panther/panther:14/AP1A.240505.005/11677807:user/release-keys'
+ABI: 'arm64'
+
+Subject: Input dispatching timed out (com.example.triagedemo/com.example.triagedemo.home.HomeActivity, 5001ms)
+Reason: Input dispatching timed out
+
+"main" prio=5 tid=1 Blocked
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x72f3a2b8 self=0xb400007a1c2c4c00
+  | sysTid=12345 nice=-10 cgrp=top-app sched=0/0 handle=0x7b4e8a14f8
+  | state=S schedstat=( 812345678 123456789 1532 ) utm=61 stm=20 core=4 HZ=100
+  at com.example.triagedemo.cache.ImageCache.get(ImageCache.kt:40)
+  - waiting to lock <0x0b7e2f11> (a java.lang.Object) held by thread 23
+  at com.example.triagedemo.home.BannerAdapter.onBindViewHolder(BannerAdapter.kt:36)
+  at androidx.recyclerview.widget.RecyclerView$Adapter.bindViewHolder(RecyclerView.java:7337)
+  at android.view.Choreographer.doFrame(Choreographer.java:1179)
+  at android.os.Looper.loop(Looper.java:294)
+  at android.app.ActivityThread.main(ActivityThread.java:8177)
+
+"DefaultDispatcher-worker-3" daemon prio=5 tid=23 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x13340000 self=0xb400007a1c3d1000
+  | sysTid=12401 nice=0 cgrp=top-app sched=0/0 handle=0x79c1f2bcb0
+  native: #00 pc 000a3c28  /apex/com.android.runtime/lib64/bionic/libc.so (write+8)
+  at libcore.io.Linux.writeBytes(Native Method)
+  at libcore.io.IoBridge.write(IoBridge.java:571)
+  at java.io.FileOutputStream.write(FileOutputStream.java:387)
+  at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+  at com.example.triagedemo.cache.ImageCache.trimToSize(ImageCache.kt:71)
+  - locked <0x0b7e2f11> (a java.lang.Object)
+  at com.example.triagedemo.cache.ImageCache.put(ImageCache.kt:55)
+  at com.example.triagedemo.cache.ImagePrefetcher$prefetch$1.invokeSuspend(ImagePrefetcher.kt:22)
+  at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)
+
+"RenderThread" daemon prio=7 tid=14 Native
+  | group="main" sCount=1 ucsCount=0 flags=1 obj=0x13300210 self=0xb400007a1c2e7800
+  native: #00 pc 000c2bb8  /apex/com.android.runtime/lib64/bionic/libc.so (__epoll_pwait+8)

@@ -1,0 +1,18 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: Firebase-Messaging-Intent-Handle
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: android.app.ForegroundServiceStartNotAllowedException: startForegroundService() not allowed due to mAllowStartForeground false: service com.example.triagedemo/.sync.SyncService
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ForegroundServiceStartNotAllowedException$1.createFromParcel(ForegroundServiceStartNotAllowedException.java:54)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Parcel.readParcelable(Parcel.java:3333)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ContextImpl.startServiceCommon(ContextImpl.java:1930)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ContextImpl.startForegroundService(ContextImpl.java:1876)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.content.ContextWrapper.startForegroundService(ContextWrapper.java:822)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.sync.SyncScheduler.startNow(SyncScheduler.kt:25)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.push.PushService.onMessageReceived(PushService.kt:47)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.google.firebase.messaging.FirebaseMessagingService.dispatchMessage(FirebaseMessagingService.java:243)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.google.firebase.messaging.EnhancedIntentService.lambda$processIntent$0(EnhancedIntentService.java:78)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

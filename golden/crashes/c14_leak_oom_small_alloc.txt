@@ -1,0 +1,10 @@
+java.lang.OutOfMemoryError: Failed to allocate a 16 byte allocation with 0 free bytes and 0B until OOM, target footprint 268435456, growth limit 268435456; giving up on allocation because <1% of heap free after GC.
+	at java.util.Arrays.copyOf(Arrays.java:3584)
+	at java.util.ArrayList.grow(ArrayList.java:244)
+	at java.util.ArrayList.add(ArrayList.java:483)
+	at com.example.triagedemo.analytics.EventBuffer.record(EventBuffer.kt:31)
+	at com.example.triagedemo.analytics.Analytics.track(Analytics.kt:18)
+	at com.example.triagedemo.home.HomeActivity.onResume(HomeActivity.kt:88)
+	at android.app.Activity.performResume(Activity.java:8615)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

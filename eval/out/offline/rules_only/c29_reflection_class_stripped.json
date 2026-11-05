@@ -1,0 +1,46 @@
+{
+  "id": "c29_reflection_class_stripped",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.ClassNotFoundException",
+    "root_cause_category": "r8_build_config",
+    "root_cause": "Class loaded by reflection was removed or renamed by R8. Add a -keep rule.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.export.ExporterRegistry",
+      "method": "create",
+      "file": "ExporterRegistry.kt",
+      "line": 27,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Class loaded by reflection was removed or renamed by R8. Add a -keep rule.",
+      "steps": [
+        "Class loaded by reflection was removed or renamed by R8. Add a -keep rule."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "reflection_class_stripped"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "reflection_class_stripped"
+  ],
+  "notes": []
+}

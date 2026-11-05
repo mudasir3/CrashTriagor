@@ -1,0 +1,46 @@
+{
+  "id": "c20_snapshot_state_background",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.IllegalStateException",
+    "root_cause_category": "compose_runtime",
+    "root_cause": "Compose state written from a background thread. Write state on Main or use StateFlow + collectAsState.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.timer.TimerViewModel",
+      "method": "getElapsed",
+      "file": "TimerViewModel.kt",
+      "line": 21,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Compose state written from a background thread. Write state on Main or use StateFlow + collectAsState.",
+      "steps": [
+        "Compose state written from a background thread. Write state on Main or use StateFlow + collectAsState."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "snapshot_state_thread"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "snapshot_state_thread"
+  ],
+  "notes": []
+}

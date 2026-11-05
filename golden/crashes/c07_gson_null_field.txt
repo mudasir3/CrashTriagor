@@ -1,0 +1,12 @@
+java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.String.length()' on a null object reference
+	at com.example.triagedemo.list.ProductAdapter.onBindViewHolder(ProductAdapter.kt:47)
+	at com.example.triagedemo.list.ProductAdapter.onBindViewHolder(ProductAdapter.kt:21)
+	at androidx.recyclerview.widget.RecyclerView$Adapter.onBindViewHolder(RecyclerView.java:7254)
+	at androidx.recyclerview.widget.RecyclerView$Adapter.bindViewHolder(RecyclerView.java:7337)
+	at androidx.recyclerview.widget.RecyclerView$Recycler.tryBindViewHolderByDeadline(RecyclerView.java:6194)
+	at androidx.recyclerview.widget.LinearLayoutManager.layoutChunk(LinearLayoutManager.java:1645)
+	at androidx.recyclerview.widget.RecyclerView.dispatchLayoutStep2(RecyclerView.java:4579)
+	at android.view.View.layout(View.java:24474)
+	at android.view.Choreographer.doFrame(Choreographer.java:1179)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

@@ -1,0 +1,8 @@
+# compiler: R8
+# min-api: 24
+com.example.triagedemo.search.QueryValidator -> c.f.a.b:
+    1:4:boolean isValid(java.lang.String):21:24 -> a
+com.example.triagedemo.search.SearchFragment$onViewCreated$1 -> c.f.a.d:
+    1:1:void onClick(android.view.View):58:58 -> onClick
+com.example.triagedemo.search.SearchFragment -> c.f.a.c:
+    1:3:void submit():70:72 -> b

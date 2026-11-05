@@ -1,0 +1,46 @@
+{
+  "id": "c22_fgs_not_allowed",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "android.app.ForegroundServiceStartNotAllowedException",
+    "root_cause_category": "permission_security",
+    "root_cause": "Foreground service started from background on Android 12+. Use WorkManager expedited work.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.sync.SyncScheduler",
+      "method": "startNow",
+      "file": "SyncScheduler.kt",
+      "line": 25,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Foreground service started from background on Android 12+. Use WorkManager expedited work.",
+      "steps": [
+        "Foreground service started from background on Android 12+. Use WorkManager expedited work."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "fgs_not_allowed"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "fgs_not_allowed"
+  ],
+  "notes": []
+}

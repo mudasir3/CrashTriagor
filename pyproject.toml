@@ -1,0 +1,25 @@
+[project]
+name = "crash-triager"
+version = "0.1.0"
+description = "Paste an Android crash log, get root cause, severity and a concrete fix."
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2.5", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+triage = "triager.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["triager"]
+
+[tool.setuptools.package-data]
+triager = ["*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

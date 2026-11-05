@@ -1,0 +1,15 @@
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+runs.jsonl
+eval/out/*
+!eval/out/offline/
+.env
+
+# repro app
+repro-app/.gradle/
+repro-app/build/
+repro-app/app/build/
+repro-app/local.properties
+repro-app/.idea/

@@ -1,0 +1,40 @@
+{
+  "id": "c11_coroutine_uncaught_network",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "android.system.GaiException",
+    "root_cause_category": "coroutine",
+    "root_cause": "Exception escaped a launch{} with no handler. Catch it inside the coroutine and surface an error state.",
+    "culprit_frame": null,
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Exception escaped a launch{} with no handler. Catch it inside the coroutine and surface an error state.",
+      "steps": [
+        "Exception escaped a launch{} with no handler. Catch it inside the coroutine and surface an error state."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "coroutine_uncaught"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "coroutine_uncaught"
+  ],
+  "notes": []
+}

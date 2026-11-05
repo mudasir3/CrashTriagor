@@ -1,0 +1,23 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: main
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: android.os.NetworkOnMainThreadException
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.StrictMode$AndroidBlockGuardPolicy.onNetwork(StrictMode.java:1668)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:115)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.Dns$Companion$DnsSystem.lookup(Dns.kt:49)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:169)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at retrofit2.OkHttpCall.execute(OkHttpCall.java:204)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.auth.AuthRepository.login(AuthRepository.kt:33)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.auth.LoginViewModel.onLoginClicked(LoginViewModel.kt:52)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.auth.LoginActivity.onCreate$lambda$2(LoginActivity.kt:41)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.view.View.performClick(View.java:7659)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

@@ -1,0 +1,19 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: arch_disk_io_0
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: java.lang.IllegalStateException: A migration from 3 to 4 was required but not found. Please provide the necessary Migration path via RoomDatabase.Builder.addMigration(Migration ...) or allow for destructive migrations via one of the RoomDatabase.Builder.fallbackToDestructiveMigration* methods.
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.room.RoomOpenHelper.onUpgrade(RoomOpenHelper.kt:91)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$OpenHelper.onUpgrade(FrameworkSQLiteOpenHelper.kt:253)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked(SQLiteOpenHelper.java:416)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.database.sqlite.SQLiteOpenHelper.getWritableDatabase(SQLiteOpenHelper.java:316)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.room.RoomDatabase.query(RoomDatabase.kt:441)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.data.OrdersDao_Impl.getAll(OrdersDao_Impl.java:96)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.data.OrdersRepository.load(OrdersRepository.kt:19)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.home.HomeViewModel$1.invokeSuspend(HomeViewModel.kt:31)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

@@ -1,0 +1,11 @@
+# USD per 1M tokens, keyed "provider/model".
+# Deliberately empty: copy prices from your provider's pricing page, with the date.
+# Free-tier calls cost $0, but tokens are still logged, so you can also report
+# "what this would cost on the paid tier" by filling these in.
+#
+# Example shape (NOT real prices):
+# gemini/your-model-name:
+#   input_per_mtok: 0.0
+#   output_per_mtok: 0.0
+#   checked: 2026-11-05
+{}

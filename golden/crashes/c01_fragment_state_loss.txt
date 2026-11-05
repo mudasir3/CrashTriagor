@@ -1,0 +1,27 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: main
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.checkStateLoss(FragmentManager.java:1689)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.enqueueAction(FragmentManager.java:1729)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.fragment.app.BackStackRecord.commitInternal(BackStackRecord.java:331)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.fragment.app.BackStackRecord.commit(BackStackRecord.java:296)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.fragment.app.DialogFragment.show(DialogFragment.java:263)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.cart.CartFragment.showCouponDialog(CartFragment.kt:88)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.cart.CartFragment$onViewCreated$2.invoke(CartFragment.kt:54)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.cart.CartFragment$onViewCreated$2.invoke(CartFragment.kt:52)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.cart.CartViewModel$applyCoupon$1.invokeSuspend(CartViewModel.kt:71)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

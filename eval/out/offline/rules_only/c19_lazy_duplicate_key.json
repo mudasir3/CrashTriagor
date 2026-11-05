@@ -1,0 +1,40 @@
+{
+  "id": "c19_lazy_duplicate_key",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.IllegalArgumentException",
+    "root_cause_category": "compose_runtime",
+    "root_cause": "Duplicate key in LazyColumn/LazyRow. Keys must be unique and stable.",
+    "culprit_frame": null,
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Duplicate key in LazyColumn/LazyRow. Keys must be unique and stable.",
+      "steps": [
+        "Duplicate key in LazyColumn/LazyRow. Keys must be unique and stable."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "lazy_duplicate_key"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "lazy_duplicate_key"
+  ],
+  "notes": []
+}

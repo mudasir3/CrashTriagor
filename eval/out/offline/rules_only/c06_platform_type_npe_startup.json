@@ -1,0 +1,46 @@
+{
+  "id": "c06_platform_type_npe_startup",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.lang.NullPointerException",
+    "root_cause_category": "null_safety",
+    "root_cause": "A Java API returned null into a non-null Kotlin type. Use a nullable type or a default.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.settings.SettingsRepository",
+      "method": "getLanguage",
+      "file": "SettingsRepository.kt",
+      "line": 31,
+      "is_app_code": true
+    },
+    "severity": "P0",
+    "severity_reason": "Inferred from the trace alone: startup or data path.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "A Java API returned null into a non-null Kotlin type. Use a nullable type or a default.",
+      "steps": [
+        "A Java API returned null into a non-null Kotlin type. Use a nullable type or a default."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "platform_type_npe"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "platform_type_npe"
+  ],
+  "notes": []
+}

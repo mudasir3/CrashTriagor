@@ -1,0 +1,14 @@
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: main
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: java.lang.IllegalArgumentException: Navigation action/destination com.example.triagedemo:id/action_list_to_detail cannot be found from the current destination Destination(com.example.triagedemo:id/detailFragment) label=Detail class=com.example.triagedemo.detail.DetailFragment
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.navigation.NavController.navigate(NavController.kt:1691)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.navigation.NavController.navigate(NavController.kt:1609)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at androidx.navigation.NavController.navigate(NavController.kt:1591)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.list.ProductListFragment$onItemClick$1.invoke(ProductListFragment.kt:97)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.list.ProductAdapter$ViewHolder.bind$lambda$0(ProductAdapter.kt:58)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.view.View.performClick(View.java:7659)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.view.View.performClickInternal(View.java:7636)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.view.View$PerformClick.run(View.java:30156)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)

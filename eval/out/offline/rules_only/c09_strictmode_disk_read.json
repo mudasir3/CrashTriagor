@@ -1,0 +1,46 @@
+{
+  "id": "c09_strictmode_disk_read",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "android.os.strictmode.DiskReadViolation",
+    "root_cause_category": "main_thread_violation",
+    "root_cause": "StrictMode violation, not a crash. Move the I/O off the main thread; impact is usually debug-only.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.theme.ThemeManager",
+      "method": "currentTheme",
+      "file": "ThemeManager.kt",
+      "line": 22,
+      "is_app_code": true
+    },
+    "severity": "P3",
+    "severity_reason": "Inferred: StrictMode violation, not a crash.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "StrictMode violation, not a crash. Move the I/O off the main thread; impact is usually debug-only.",
+      "steps": [
+        "StrictMode violation, not a crash. Move the I/O off the main thread; impact is usually debug-only."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "strictmode_violation"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "strictmode_violation"
+  ],
+  "notes": []
+}

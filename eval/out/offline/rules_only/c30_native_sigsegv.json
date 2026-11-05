@@ -1,0 +1,42 @@
+{
+  "id": "c30_native_sigsegv",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "native",
+    "exception": "signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0000000000000010",
+    "root_cause_category": "native",
+    "root_cause": "Native crash. Needs symbolicated backtrace (ndk-stack with unstripped .so) for a real root cause.",
+    "culprit_frame": null,
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "medium",
+    "suggested_fix": {
+      "summary": "Native crash. Needs symbolicated backtrace (ndk-stack with unstripped .so) for a real root cause.",
+      "steps": [
+        "Native crash. Needs symbolicated backtrace (ndk-stack with unstripped .so) for a real root cause."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [
+      "symbolicated backtrace (unstripped .so + ndk-stack)"
+    ],
+    "rule_hits": [
+      "native_crash"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "native_crash"
+  ],
+  "notes": []
+}

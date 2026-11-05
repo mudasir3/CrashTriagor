@@ -1,0 +1,21 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: main
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: java.net.UnknownHostException: Unable to resolve host "api.example.com": No address associated with hostname
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.Dns$Companion$DnsSystem.lookup(Dns.kt:49)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1012)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@6d0b1c4, Dispatchers.Main.immediate]
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at libcore.io.Linux.android_getaddrinfo(Native Method)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:133)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	... 21 more
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

@@ -1,0 +1,8 @@
+java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.String.length()' on a null object reference
+	at c.f.a.b.a(SourceFile:3)
+	at c.f.a.d.onClick(SourceFile:1)
+	at android.view.View.performClick(View.java:7659)
+	at android.view.View$PerformClick.run(View.java:30156)
+	at android.os.Handler.handleCallback(Handler.java:958)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

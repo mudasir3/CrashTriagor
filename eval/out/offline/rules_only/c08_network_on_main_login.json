@@ -1,0 +1,46 @@
+{
+  "id": "c08_network_on_main_login",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "android.os.NetworkOnMainThreadException",
+    "root_cause_category": "main_thread_violation",
+    "root_cause": "Blocking network call on the main thread. Use suspend APIs or withContext(Dispatchers.IO).",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.auth.AuthRepository",
+      "method": "login",
+      "file": "AuthRepository.kt",
+      "line": 33,
+      "is_app_code": true
+    },
+    "severity": "P0",
+    "severity_reason": "Inferred from the trace alone: login/payment path.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Blocking network call on the main thread. Use suspend APIs or withContext(Dispatchers.IO).",
+      "steps": [
+        "Blocking network call on the main thread. Use suspend APIs or withContext(Dispatchers.IO)."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "network_on_main"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "network_on_main"
+  ],
+  "notes": []
+}

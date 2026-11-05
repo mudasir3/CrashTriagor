@@ -1,0 +1,40 @@
+{
+  "id": "c15_transaction_too_large",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "android.os.TransactionTooLargeException",
+    "root_cause_category": "parcel_binder",
+    "root_cause": "Binder transaction over ~1MB, usually a large savedInstanceState or Intent extras. Keep only ids in bundles.",
+    "culprit_frame": null,
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Binder transaction over ~1MB, usually a large savedInstanceState or Intent extras. Keep only ids in bundles.",
+      "steps": [
+        "Binder transaction over ~1MB, usually a large savedInstanceState or Intent extras. Keep only ids in bundles."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "transaction_too_large"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "transaction_too_large"
+  ],
+  "notes": []
+}

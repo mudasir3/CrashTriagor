@@ -1,0 +1,46 @@
+{
+  "id": "c27_anr_binder_contentresolver",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "anr",
+    "exception": "ANR",
+    "root_cause_category": "anr_blocking",
+    "root_cause": "Main thread blocked in a binder/IPC call (ContentResolver, system service). Move it off Main.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.contacts.ContactsRepository",
+      "method": "loadAll",
+      "file": "ContactsRepository.kt",
+      "line": 29,
+      "is_app_code": true
+    },
+    "severity": "P1",
+    "severity_reason": "Inferred from the trace alone: ANR.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Main thread blocked in a binder/IPC call (ContentResolver, system service). Move it off Main.",
+      "steps": [
+        "Main thread blocked in a binder/IPC call (ContentResolver, system service). Move it off Main."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "anr_binder_main"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "anr_binder_main"
+  ],
+  "notes": []
+}

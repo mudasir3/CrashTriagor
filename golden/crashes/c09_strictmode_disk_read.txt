@@ -1,0 +1,10 @@
+11-02 14:03:11.482 12345 12345 D StrictMode: StrictMode policy violation; ~duration=48 ms: android.os.strictmode.DiskReadViolation
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1659)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at java.io.FileInputStream.<init>(FileInputStream.java:160)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.app.SharedPreferencesImpl.loadFromDisk(SharedPreferencesImpl.java:174)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.app.SharedPreferencesImpl.awaitLoadedLocked(SharedPreferencesImpl.java:283)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.app.SharedPreferencesImpl.getString(SharedPreferencesImpl.java:301)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at com.example.triagedemo.theme.ThemeManager.currentTheme(ThemeManager.kt:22)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at com.example.triagedemo.MainActivity.onCreate(MainActivity.kt:29)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.app.Activity.performCreate(Activity.java:8595)
+11-02 14:03:11.482 12345 12345 D StrictMode: 	at android.app.ActivityThread.main(ActivityThread.java:8177)

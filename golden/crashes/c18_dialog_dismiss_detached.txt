@@ -1,0 +1,11 @@
+java.lang.IllegalArgumentException: View=DecorView@a3b1f27[LoadingDialog] not attached to window manager
+	at android.view.WindowManagerGlobal.findViewLocked(WindowManagerGlobal.java:592)
+	at android.view.WindowManagerGlobal.removeView(WindowManagerGlobal.java:496)
+	at android.view.WindowManagerImpl.removeViewImmediate(WindowManagerImpl.java:178)
+	at android.app.Dialog.dismissDialog(Dialog.java:419)
+	at android.app.Dialog.dismiss(Dialog.java:401)
+	at com.example.triagedemo.common.LoadingDialog.hide(LoadingDialog.kt:22)
+	at com.example.triagedemo.settings.ExportActivity$export$1.invokeSuspend(ExportActivity.kt:64)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

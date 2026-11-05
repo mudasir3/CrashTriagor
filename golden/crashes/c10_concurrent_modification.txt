@@ -1,0 +1,9 @@
+java.util.ConcurrentModificationException
+	at java.util.ArrayList$Itr.next(ArrayList.java:1058)
+	at com.example.triagedemo.cart.CartRepository.totalPrice(CartRepository.kt:58)
+	at com.example.triagedemo.cart.CartViewModel$uiState$1.invokeSuspend(CartViewModel.kt:40)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at android.os.Handler.handleCallback(Handler.java:958)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

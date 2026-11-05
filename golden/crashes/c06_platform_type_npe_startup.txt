@@ -1,0 +1,20 @@
+11-02 14:03:11.482 12345 12345 I ViewRootImpl: Resizing view to 1080x2400
+11-02 14:03:11.482 12345 12356 D OkHttp: --> GET https://api.example.com/v2/feed?page=2&token=abc123secret
+11-02 14:03:11.482 12345 12345 W Choreographer: Frame time is 18.4 ms in the future!
+11-02 14:03:11.482 12345 12348 I triagedemo: Background concurrent copying GC freed 41MB AllocSpace objects
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: FATAL EXCEPTION: main
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Process: com.example.triagedemo, PID: 12345
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: java.lang.RuntimeException: Unable to create application com.example.triagedemo.TriageDemoApp: java.lang.NullPointerException: getString(...) must not be null
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:7001)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.access$1500(ActivityThread.java:256)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2110)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: Caused by: java.lang.NullPointerException: getString(...) must not be null
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.settings.SettingsRepository.getLanguage(SettingsRepository.kt:31)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.settings.LocaleManager.apply(LocaleManager.kt:19)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at com.example.triagedemo.TriageDemoApp.onCreate(TriageDemoApp.kt:42)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1316)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6996)
+11-02 14:03:11.482 12345 12345 E AndroidRuntime: 	... 8 more
+11-02 14:03:11.482 1540 1602 I ActivityManager: Process com.example.triagedemo (pid 12345) has died: fg TOP

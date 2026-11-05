@@ -1,0 +1,10 @@
+android.os.BadParcelableException: Parcelable protocol requires a Parcelable.Creator object called CREATOR on class com.example.triagedemo.model.Filter
+	at android.os.Parcel.readParcelableCreatorInternal(Parcel.java:4886)
+	at android.os.Parcel.readParcelableInternal(Parcel.java:4796)
+	at android.os.BaseBundle.getValueAt(BaseBundle.java:394)
+	at android.os.Bundle.getParcelable(Bundle.java:1003)
+	at com.example.triagedemo.filter.FilterSheet.onCreate(FilterSheet.kt:34)
+	at androidx.fragment.app.Fragment.performCreate(Fragment.java:3094)
+	at androidx.fragment.app.FragmentStateManager.create(FragmentStateManager.java:504)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

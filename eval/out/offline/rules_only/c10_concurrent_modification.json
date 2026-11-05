@@ -1,0 +1,46 @@
+{
+  "id": "c10_concurrent_modification",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "java.util.ConcurrentModificationException",
+    "root_cause_category": "concurrency",
+    "root_cause": "Collection mutated while iterated, often from another thread. Use a snapshot copy or a thread-safe structure.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.cart.CartRepository",
+      "method": "totalPrice",
+      "file": "CartRepository.kt",
+      "line": 58,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "Collection mutated while iterated, often from another thread. Use a snapshot copy or a thread-safe structure.",
+      "steps": [
+        "Collection mutated while iterated, often from another thread. Use a snapshot copy or a thread-safe structure."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "concurrent_modification"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "concurrent_modification"
+  ],
+  "notes": []
+}

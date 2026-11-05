@@ -1,0 +1,12 @@
+kotlin.UninitializedPropertyAccessException: lateinit property adapter has not been initialized
+	at com.example.triagedemo.orders.OrdersFragment.refreshBadge(OrdersFragment.kt:112)
+	at com.example.triagedemo.orders.OrdersFragment.onResume(OrdersFragment.kt:74)
+	at androidx.fragment.app.Fragment.performResume(Fragment.java:3180)
+	at androidx.fragment.app.FragmentStateManager.resume(FragmentStateManager.java:588)
+	at androidx.fragment.app.FragmentStateManager.moveToExpectedState(FragmentStateManager.java:289)
+	at androidx.fragment.app.FragmentManager.dispatchStateChange(FragmentManager.java:3216)
+	at androidx.fragment.app.FragmentActivity.onResume(FragmentActivity.java:313)
+	at android.app.Activity.performResume(Activity.java:8615)
+	at android.app.ActivityThread.performResumeActivity(ActivityThread.java:5084)
+	at android.os.Looper.loop(Looper.java:294)
+	at android.app.ActivityThread.main(ActivityThread.java:8177)

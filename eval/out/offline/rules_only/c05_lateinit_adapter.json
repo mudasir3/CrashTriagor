@@ -1,0 +1,46 @@
+{
+  "id": "c05_lateinit_adapter",
+  "mode": "rules_only",
+  "provider": "none",
+  "model": "none",
+  "prompt_version": "v1.0",
+  "triage": {
+    "crash_kind": "jvm_exception",
+    "exception": "kotlin.UninitializedPropertyAccessException",
+    "root_cause_category": "null_safety",
+    "root_cause": "lateinit read before assignment. Find the code path that runs before initialisation.",
+    "culprit_frame": {
+      "class_name": "com.example.triagedemo.orders.OrdersFragment",
+      "method": "refreshBadge",
+      "file": "OrdersFragment.kt",
+      "line": 112,
+      "is_app_code": true
+    },
+    "severity": "P2",
+    "severity_reason": "Inferred from the trace alone; no impact data.",
+    "confidence": "high",
+    "suggested_fix": {
+      "summary": "lateinit read before assignment. Find the code path that runs before initialisation.",
+      "steps": [
+        "lateinit read before assignment. Find the code path that runs before initialisation."
+      ],
+      "code_snippet": null
+    },
+    "needs_more_info": [],
+    "rule_hits": [
+      "lateinit_uninitialized"
+    ]
+  },
+  "error": null,
+  "valid_first_try": true,
+  "repaired": false,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_s": 0,
+  "cost_usd": null,
+  "grounding_flags": [],
+  "rule_hits": [
+    "lateinit_uninitialized"
+  ],
+  "notes": []
+}
